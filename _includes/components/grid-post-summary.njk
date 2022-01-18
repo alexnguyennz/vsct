@@ -1,0 +1,27 @@
+<div class="flex flex-col border border-black shadow-button space-y-5 transition-transform duration-200 transform hover:-translate-y-2">
+    <div>
+        {# <a href="{{ post.url }}"><img class="w-full h-80" src="{{ post.data.image }}" /></a> #}
+        <a href="{{ post.url }}">{% image post.data.image, post.data.title ~ " photo", "10vw", "h-80" %}</a>
+    </div>
+    <div class="px-5 pb-5 flex flex-col flex-1">
+        <h2 class="text-xl text-left"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+		
+      <div class="my-3">
+          {% set excerpt = post.data.page.excerpt | truncate(100) %}
+          {{ excerpt }}
+      </div>
+
+      {% set member = collections.trustMembers | getCollectionItemBySlug(post.data.authorTrustMember) %}
+      <div class="flex space-x-3 mt-auto">
+          <div class="flex flex-col">
+              {# <img class="rounded-full" src="{{ member.data.image }}" width="50" height="50" /> #}
+              {% image member.data.image, member.data.name ~ " photo", "10vw", "rounded-full w-12 h-12" %}
+          </div>
+          <div class="flex flex-col self-center">
+              {{ member.data.name }}<br />
+              {{ post.data.date | postDate }}
+          </div>
+      </div>
+        
+    </div>
+</div>

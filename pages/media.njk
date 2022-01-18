@@ -1,0 +1,21 @@
+---
+title: Media
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section">
+
+    <div class="text-center editable">
+        <p>Articles and sites where VSCT has been mentioned. Something missing here? <a href="mailto:hello@vsctrust.org.nz">Email us!</a></p>
+    </div>
+</section>
+
+<section class="section">
+
+    <ul class="timeline timeline-centered">
+        {% for timeline in collections.media | reverse %}
+            {% include 'components/date-timeline.njk' %}
+        {% endfor %}
+        <li class="timeline-item pb-0"><div class="timeline-marker"></div></li>
+    </ul>
+</section>

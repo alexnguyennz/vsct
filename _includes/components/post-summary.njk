@@ -1,0 +1,32 @@
+<section>
+    <div class="grid lg:grid-cols-2 gap-5">
+        <div class="">
+            {# <img class="rounded-lg" src="{{ post.data.image }}" /> #}
+            {% image post.data.image, post.data.title ~ " photo", "100vw", "rounded-lg" %}
+        </div>
+        
+        <div class="space-y-5">
+            <p class="space-x-2">
+            {% for tag in post.data.tags %}
+                {% if tag and tag !== 'posts' %}
+                    <a class="text-gray-50" href="/news/category/{{ tag | slug }}/"><button class="tag-button bg-gray-600 hover:bg-gray-500 font-semibold transition-colors duration-200">{{ tag }}</button></a>
+                {% endif %}
+            {% endfor %}
+            </p>
+
+            <h2 class="text-3xl text-left">{{ post.data.title }}</h2>
+
+            {% set member = collections.trustMembers | getCollectionItemBySlug(post.data.authorTrustMember) %}
+            <div class="flex space-x-3">
+                <div class="flex flex-col">
+                    {# <img class="rounded-full" src="{{ member.data.image }}" width="50" height="50" /> #}
+                    {% image member.data.image, member.data.name ~ " photo", "100vw", "rounded-full w-12 h-12" %}
+                </div>
+                <div class="flex flex-col self-center">
+                    {{ member.data.name }}<br />
+                    {{ post.data.date | postDate }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

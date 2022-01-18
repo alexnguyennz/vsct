@@ -1,0 +1,74 @@
+---
+title: Volunteer
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-4 gap-10">
+        <div>
+            <a href="/dosomegood/">
+                {% image "/_public/img/logo/dosomegood.png", "Do Some Good logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Help us influence positive change for tamariki living in hardship by helping schools and kindergartens here in Wellington.</p>
+                <p>We are looking for volunteers to come out with us to schools, and have a great day with tamariki in need.</p>
+            </div>
+        </div>
+
+        <div>
+            <a href="/take10/">
+                {% image "/_public/img/logo/take10.png", "Take 10 logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Help reduce alcohol-related harm and alleviate demands on emergency services by providing a safe zone on Courtenay Place.</p>
+                <p>We’re looking for volunteers on Friday and Saturday night shifts from 10pm to 3am.</p>
+                <p><a href="/_public/take10.pdf"><strong>Read the team member role description</strong></a></p>
+            </div>
+        </div>
+
+        <div>
+            <a href="/take10-arvos/">
+                {% image "/_public/img/logo/take10-arvos.png", "Take 10 Arvo's logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Our focus is to increase the reach Take 10 has in the community by extending the services we offer to rangatahi in the form of a youth zone.</p> 
+            </div>
+        </div>
+
+        <div>
+            <a href="/gen-link/">
+                {% image "/_public/img/logo/gen-link.png", "Gen Link logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p class="mb-0">Generation Link aims to lessen the generation gap by connecting tamariki with older folk within their local communities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 dark:bg-gray-900">
+    <form class="section lg:px-40" name="volunteer" method="post" action="/success/">
+        <div class="flex flex-col lg:flex-row w-full lg:space-x-5">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/name.njk' %}
+            </div>
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/email.njk' %}
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/role.njk' %}
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/message.njk' %}
+            </div>
+        </div>
+
+        {% include 'components/form/cloudcannon.njk' %}
+
+        {% include 'components/form/submit.njk' %}
+    </form>
+</section>

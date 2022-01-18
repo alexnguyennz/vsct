@@ -1,0 +1,112 @@
+---
+title: Generation Link
+bannerImage: /_public/img/banner/genlink.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-2 gap-10">
+        <div class="editable">
+            {% image "/_public/img/logo/gen-link-lg.png", "Gen Link logo", "100vw", "mx-auto" %}
+        </div>
+        <div class="grid gap-5">
+            <div class="editable"><h3>Generation Link aims to lessen the generation gap by connecting tamariki with older folk within their local communities.</h3></div>
+            <div class="editable">
+            <p>Working alongside schools already involved with <a href="/dosomegood">Do Some Good</a>, Gen Link will provide and facilitate the transport and support to bring seniors from their home to tamariki at school, during school hours.</p>
+            <p>Seniors will be encouraged to interact with the children through facilitated and organised activities such as book reading, storytelling, playing board games, and gardening.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#howitworks" id="howitworks">How it works</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6">
+        <div class="editable">
+            <p>Gen Link aims to:</p>
+            <ul class="list-disc">
+                <li>connect our young and older people</li>
+                <li>reduce isolation of older people</li>
+            </ul>
+        </div>
+        <div class="editable">
+            <p>A van will pick up seniors and transport them to the Do Some Good school in their area. This will happen weekly across the schools. The Generation Link initiative will act as the facilitator between young people and seniors.</p>
+        </div>
+    </div>
+    <div class="mt-6 editable">
+        <p>What are the benefits of Generation Link?</p>
+        <ul>
+            <li>Strengthening communities to become more age-friendly by breaking down barriers between ages and stereotypes by one age group toward another</li>
+            <li>Promoting understanding, respect, and sharing of ideas, knowledge, and experience</li>
+            <li>Teaching the young about aging while teaching the elderly about youth</li>
+            <li>Establishing relationships that help diminish the impact of declining physical and mental health in older people</li>
+            <li>Improving health outcomes and quality-of-life for the elderly</li>
+            <li>Building self-esteem and satisfaction for both age groups through the learning of new skills</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#wanttohelp" id="wanttohelp">Want to help?</a></h2>
+    </div>
+    <div class="flex flex-row">
+        <div class="flex flex-col flex-1">
+            <div class="editable">
+                <p class="text-center">We’re looking for volunteers to join us for one hour one afternoon per week, Interested? Click below, fill in your details and we’ll get back to you!</p>
+            </div>
+            {% button 'Volunteer', '/volunteer', 'bg-blue-400', 'bg-blue-300' %}
+        </div>
+    </div>
+</section>
+
+{% if collections.genLinkTestimonials %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#testimonials" id="testimonials">Testimonials</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-5 genlink">
+        {% for testimonial in collections.genLinkTestimonials %}
+            {% include 'components/testimonial.njk' %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if collections.genLinkGallery %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#gallery" id="gallery">Gallery</a></h2>
+    </div>
+    <div class="splide photo-gallery genlink">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.genLinkGallery %}
+                    {% include 'components/gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if collections.genLinkSponsors %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#sponsors" id="sponsors">Sponsors</a></h2>
+    </div>
+    <div class="splide genlink">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.genLinkSponsors %}
+                    {% include 'components/logo-gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<script src="/js/splide.min.js"></script>
+<script src="/js/splide-init.js"></script>

@@ -1,0 +1,4 @@
+---
+testimonialName: Jenny Rains, Community Manager at Wellington City Council
+testimonialDescription: We see this project making a significant contribution to the city’s approach to harm reduction as well as contributing to the city safety and community well being. Take 10 is a preventative initiative which reduces the impacts of alcohol harm by providing a safe and supportive space for vulnerable youth, people to take a break, rehydrate, charge cell phones and reconnect with friends. Wellington City Council is committed to continuing to partner with Take 10 through ongoing support from officers and funding.
+---

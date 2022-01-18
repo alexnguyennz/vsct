@@ -1,0 +1,36 @@
+---
+title: News
+bannerImage: /_public/img/banner/default.jpg
+pagination:
+  data: collections.posts
+  size: 6
+  reverse: true
+permalink: "/news/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+
+
+<section class="section">
+    <section class="grid lg:grid-cols-3 gap-10">
+        {% for post in pagination.items %}
+            {% include 'components/grid-post-summary.njk' %}
+        {% endfor %}
+    </section>
+</section>
+
+<section class="section">
+    {% if pagination.href.previous or pagination.href.next %}
+    <nav aria-labelledby="my-pagination">
+        <div class="text-center space-x-5">
+            {% if pagination.href.previous %}
+                <a class="text-gray-50" href="{{ pagination.href.previous }}"><button class="button text-sm bg-gray-600 hover:bg-gray-500 font-semibold transition-colors duration-200">&#60; Newer</button></a>
+            {% endif %}
+
+            <span class="bg-gray-50 border border-gray-100 p-4 font-semibold text-sm dark:bg-gray-900 dark:border-black">Page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}</span>
+
+            {% if pagination.href.next %}
+                <a class="text-gray-50" href="{{ pagination.href.next }}"><button class="button text-sm bg-gray-600 hover:bg-gray-500 font-semibold transition-colors duration-200">Older &#62;</button></a>
+            {% endif %}
+        </div>
+    </nav>
+    {% endif %}
+</section>

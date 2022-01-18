@@ -1,0 +1,47 @@
+{
+  "name": "vsct",
+  "version": "1.0.0",
+  "description": "Vulnerable Support Charitable Trust is a charity organisation keen on improving the lives of people in Wellington.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel dev:*",
+    "dev:eleventy": "eleventy --serve --quiet",
+    "dev:css": "npx postcss css/globals.css --o _site/css/globals.css --watch",
+    "build:css": "tailwindcss -i css/globals.css -o _site/css/globals.css --minify --postcss",
+    "build:eleventy": "eleventy --quiet",
+    "build": "cross-env NODE_ENV=production npm-run-all --parallel build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexnguyennz/vsct.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "cloudcannon"
+  ],
+  "author": "Alex Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexnguyennz/vsct/issues"
+  },
+  "homepage": "https://github.com/alexnguyennz/vsct#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@tailwindcss/forms": "^0.4.0",
+    "autoprefixer": "^10.3.4",
+    "eleventy-plugin-seo": "^0.5.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^3.0.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "3.5.3",
+    "cross-env": "^7.0.3",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^12.2.0"
+  }
+}

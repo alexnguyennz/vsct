@@ -1,0 +1,10 @@
+---
+title: The Trust
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section grid lg:grid-cols-3 gap-10 lg:gap-16">
+    {% for member in collections.trustMembers %}
+        {% include 'components/trust-member.njk' %}
+    {% endfor %}
+</section>

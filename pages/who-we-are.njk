@@ -1,0 +1,100 @@
+---
+title: Who We Are
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-2 gap-5">
+        <div class="editable">
+            {% image "/_public/img/vsct-icon.png", "Vulnerable Support Charitable Trust icon", "100vw", "mx-auto" %}
+        </div>
+        <div class="editable">
+            <p>Vulnerable Support Charitable Trust (VSCT) is a charity organisation keen on supporting tamariki in need by providing food in schools, young people in the city on Friday and Saturday nights, and older people who may be feeling alone or isolated.</p>
+            <p>We are a registered charity: <a href="https://www.register.charities.govt.nz/Charity/CC55753" target="_blank" rel="noreferrer noopener nofollow">CC55753</a></p>
+        </div>
+    </div>
+    {% button 'Meet the Trust', '/trust/', 'bg-gray-600', 'bg-gray-500 mt-5' %}
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#programmes" id="programmes">Our Programmes</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-4 gap-10">
+        <div>
+            <a href="/dosomegood/">
+                {% image "/_public/img/logo/dosomegood.png", "Do Some Good logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Helping Wellington businesses find opportunities to help the schools and kiwi kids who need it most. With Do Some Good, we want to help build connections between businesses and low decile schools to generate positive change in how we look after our people.</p>
+                <h4>Awards</h4>
+                <ul>
+                    <li>Finalist of 2019 Hutt City's Regional Community Awards</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <a href="/take10/">
+                {% image "/_public/img/logo/take10.png", "Take 10 logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>A late-night “safe zone” on Courtenay Place for  youth, with free water, phone charging, medical help, refuge, and advice. We provide a safe space to “take 10” for those who may need a break form drinking, need help, or just want a break.<p> 
+                <h4>Awards</h4>
+                <ul>
+                    <li>Winner of 2021 Hutt City's Regional Community Awards</li>
+                    <li>Winner of 2018 Wellington City Council’s Safety Award</li>
+                    <li>Winner of 2018 Inner City Wellington’s Gratitude Award</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <a href="/take10-arvos/">
+                {% image "/_public/img/logo/take10-arvos.png", "Take 10 Arvo's logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Our focus is to increase the reach Take 10 has in the community by extending the services we offer to rangatahi in the form of a youth zone.<p> 
+            </div>
+        </div>
+
+        <div>
+            <a href="/gen-link/">
+                {% image "/_public/img/logo/gen-link.png", "Gen Link logo", "100vw", "mx-auto mb-3" %}
+            </a>
+            <div class="editable">
+                <p>Generation Link aims to lessen the generation gap by connecting tamariki with older folk within their local communities.<p> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#partners" id="partners">Our Partners</a></h2>
+    </div>
+</section>
+
+<section class="section text-center">
+    <div class="editable">
+        <h2><a href="#milestones" id="milestones">Milestones</a></h2>
+    </div>
+    <div class="editable">
+        <p class="milestones bg-red-400">Planned</p>
+    </div>
+    <ul class="timeline timeline-centered text-left">
+        {% for milestone in collections.planned %}
+            {% include 'components/milestones.njk' %}
+        {% endfor %}
+        <li class="timeline-item"><div class="timeline-marker"></div></li>
+    </ul>
+    <div class="editable">
+        <p class="milestones bg-green-400">Accomplished</p>
+    </div>
+    <ul class="timeline timeline-centered text-left">
+        {% for milestone in collections.accomplished | reverse %}
+            {% include 'components/milestones.njk' %}
+        {% endfor %}
+    <li class="timeline-item pb-0"><div class="timeline-marker"></div></li>
+</ul>
+</section>

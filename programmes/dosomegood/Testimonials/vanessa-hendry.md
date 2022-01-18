@@ -1,0 +1,4 @@
+---
+testimonialName: Vanessa Hendry, Principal at Porirua School
+testimonialDescription: Porirua School is extremely lucky to have the School Lunch Project. Our students come to school knowing that they can make a lunch if they do not have lunch. We have seen an increase in students coming to school. Before they would have stayed at home because they didn’t have lunch to bring to school. We have students who are now ready to learn with full tummies, while also learning great life skills of independently making their lunch or volunteer to help others. Thank you VSCT for supporting our school community.
+---

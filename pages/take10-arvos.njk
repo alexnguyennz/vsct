@@ -1,0 +1,122 @@
+---
+title: Take 10 Arvo's
+bannerImage: /_public/img/banner/take10-arvos.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-2 gap-10">
+        <div class="editable">
+            {% image "/_public/img/logo/take10-arvos-lg.png", "Take 10 Arvo's logo", "100vw", "mx-auto" %}
+        </div>
+        <div class="grid gap-5">
+            <div class="editable">
+                <h3>Our focus is to increase the reach Take 10 has in the community by extending the services we offer to rangatahi in the form of a youth zone.</h3>
+            </div>
+            <div class="editable">
+                <p><strong>During the school term, we are at:</strong></p>
+                <ul>
+                    <li>Linden Community Centre (10 Linden Avenue, Linden) every Tuesday and Thursday from 3 to 5pm</li>
+                    <li>Johnsonville Collective Community Hub (1/33 Johnsonville Road, Johnsonville) every Friday from 3 to 5pm</li>
+                </ul>
+                <p>Our team will be there offering our usual services: water, food, games, a chill-out space, bean bags and lots of cool workshops along with additional support services.</p>
+            </div>
+            <div class="editable">
+                <p><strong>School Holiday Programmes</strong></p>
+                <p>We will be hosting free drop-in’s in Tawa and Johnsonville over the school holidays.</p>
+                <p>We will have lunch/afternoon tea, games (including our much-loved table tennis), and more.</p>
+            </div>
+                <div class="editable">
+                    <p><strong>Tawa – Linden Community Centre</strong></p>
+                    <p>Holiday dates to be confirmed.</p>
+                </div>
+                <div class="editable">
+                    <p><strong>Johnsonville – Collective Community Hub</strong></p>
+                    <p>Holiday dates to be confirmed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#howitworks" id="howitworks">How it works</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6">
+        <div class="editable">
+            <p>Take 10 Arvo's aims to:</p>
+            <ul>
+                <li>support rangatahi</li>
+                <li>provide a safe and fun space for them to come to after school</li>
+            </ul>
+        </div>
+        <div class="editable">
+            <p>We keep our “safe zone” welcoming and non-judgmental, by:</p>
+            <ul>
+                <li>always using positive language</li>
+                <li>greeting visitors with a smile, water, and lollies</li>
+                <li>providing a private space for those who need more attention</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#wanttohelp" id="wanttohelp">Want to help?</a></h2>
+    </div>
+    <div class="editable">
+        <p>We’re looking for volunteers to help in the afternoons, hand out water, talk to people, and make the Take 10 area an inviting place to be. Interested? Click below, fill in your details and we’ll get back to you!</p>
+    </div>
+    {% button 'Volunteer', '/volunteer/', 'bg-yellow-500', 'bg-yellow-400' %}
+</section>
+
+{% if collections.take10ArvosTestimonials %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#testimonials" id="testimonials">Testimonials</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 take10">
+        {% for testimonial in collections.take10ArvosTestimonials %}
+            {% include 'components/testimonial.njk' %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if collections.take10ArvosGallery %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#gallery" id="gallery">Gallery</a></h2>
+    </div>
+    <div class="splide photo-gallery take10">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.take10ArvosGallery %}
+                    {% include 'components/gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if collections.take10ArvosSponsors %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#sponsors" id="sponsors">Sponsors</a></h2>
+    </div>
+    <div class="splide take10">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.take10ArvosSponsors %}
+                    {% include 'components/logo-gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<script src="/js/splide.min.js"></script>
+<script src="/js/splide-init.js"></script>

@@ -1,0 +1,11 @@
+---
+layout: layouts/layout.njk
+---
+<section class="section pt-0">
+    {% set post = collections.posts | getCollectionItem(page) %}
+    {% include 'components/post-summary.njk' %}
+</section>
+
+<section class="section pt-0 post-body">
+    <div>{{ content | safe }}</div>
+</section>

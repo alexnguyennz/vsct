@@ -1,0 +1,690 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    body {
+        @apply dark:bg-gray-800 dark:text-gray-100;
+        font-family: "Poppins", Helvetica, Arial, Sans-Serif;
+    }
+    
+    .flex-layout {
+        @apply flex flex-col lg:flex-row;
+    }
+
+    .section {
+        @apply container mx-auto px-5 py-10 lg:px-0;
+    }
+
+    .section-flex {
+        @apply flex flex-col lg:flex-row;
+    }
+
+    section ul {
+        @apply list-disc pl-5;
+    }
+
+    p {
+        @apply mb-3;
+    }
+
+    section a {
+        @apply hover:underline;
+    }
+
+    h2 {
+        @apply my-1 text-4xl font-bold text-center text-gray-900 tracking-tight dark:text-gray-100;
+    }
+
+    h2 a {
+        @apply hover:no-underline;
+    }
+
+    h3 {
+        @apply text-2xl font-semibold;
+    }
+
+    h4 {
+        @apply text-xl font-semibold text-center;
+    }
+
+    input[type='text'], input[type='email'], input[type='tel'], input[type='url'], select, textarea {
+        @apply  dark:bg-gray-700 dark:border-gray-500;
+    }
+
+    input::placeholder, textarea::placeholder {
+        @apply dark:text-gray-400;
+    }
+
+    [type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        @apply border-blue-500 dark:border-blue-500;
+    }
+
+}
+
+@layer components {
+
+    /*** HEADER ***/
+    header nav a {
+        @apply relative px-5;
+    }
+
+    header nav a.active-link::after {
+        @apply absolute block w-full h-1.5 left-1/2 -bottom-2 bg-red-400 transform -translate-x-1/2;
+        content: "";
+    }
+
+    header nav .submenu {
+        @apply inline-block relative;
+    }
+
+    header nav .submenu > a {
+        @apply cursor-pointer;
+    }
+
+    
+
+    header nav .submenu .dropdown {
+        @apply absolute -left-5 rounded-lg p-5 bg-white opacity-0 invisible transition-all duration-200 transform scale-75 z-10 dark:bg-gray-800 dark:text-gray-600;
+    }
+    
+    header nav .submenu:hover .dropdown {
+        @apply opacity-100 visible transform scale-100 shadow-2xl;
+    }
+
+
+    header nav .submenu .dropdown a {
+        @apply block px-5 py-3 rounded-lg transition duration-500 hover:bg-green-300 hover:bg-opacity-20 dark:text-gray-100 dark:hover:bg-gray-700;
+    }
+
+
+    /*** MOBILE HEADER ***/
+    .mobile-menu a {
+        @apply block py-4 text-sm transition duration-300 cursor-pointer hover:bg-gray-600 hover:text-white;
+    }
+
+    .mobile-menu ul li > a {
+        @apply px-5;
+    }
+
+    .mobile-menu div li a {
+        @apply px-10;
+    }
+
+    .mobile-menu .active-link {
+        @apply text-white bg-gray-600;
+    }
+
+    .mobile-menu .donate-button {
+        @apply text-white bg-red-400 hover:bg-red-300 uppercase font-semibold;
+    }
+
+    
+    /*** FOOTER ***/
+    #dark-button {
+        @apply absolute bottom-3 right-3;
+    }
+
+    #dark-button svg {
+        width: 32px;
+        height: 32px;
+        @apply w-3/4 lg:w-full;
+        
+    }
+
+    footer {
+        @apply relative;
+    }
+
+    footer ul li:first-child a {
+        @apply font-bold;
+    }
+
+    .social-media {
+        @apply relative inline-block cursor-pointer;
+    }
+
+    .social-media > a {
+        @apply opacity-80 transition duration-200;
+    }
+
+    .social-media > a:hover {
+        @apply opacity-100;
+    }
+
+    .social-media span {
+        @apply absolute bg-gray-700 dark:bg-gray-900 p-4 rounded-lg z-10 -ml-10 left-1/2 bottom-12 opacity-0 invisible transform scale-75 transition-all duration-300;
+    }
+
+    .social-media:hover span {
+        @apply opacity-100 visible scale-100;
+    }
+
+    .social-media span img {
+        @apply max-w-none scale-90 transition-all duration-200;
+    }
+
+    .social-media span a:hover img {
+        @apply scale-100;
+    }
+
+    .social-media span a:first-child img {
+        @apply mb-3;
+    }
+
+
+    /*** BUTTONS ***/
+    .button {
+        @apply relative text-xl p-3 border-2 border-black transition-colors ease-in-out duration-200 shadow-button active:shadow-none active:top-1 active:left-1;
+    }
+
+    
+
+    .button, .tag-button, .text-shadow h3 {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .box-shadow, .tag-button {
+        @apply shadow-button;
+    }
+    
+    .tag-button {
+        @apply relative text-sm border-2 border-black p-2 active:shadow-none active:top-1 active:left-1;
+    }
+
+
+    /*** PROGRAMMES ***/
+    blockquote {
+        @apply relative pl-12;
+    }
+
+    blockquote::before {
+        @apply absolute left-2 text-7xl;
+    }
+
+    blockquote::before {
+        content: "\201C";
+    }
+
+    .splide {
+        padding-top: 0 !important;
+
+    }
+
+    .dosomegood blockquote {
+        @apply border-l-4 border-red-400;
+    }
+
+    .dosomegood blockquote::before {
+        @apply text-red-400;
+    }
+
+    .dosomegood .splide__arrow svg, .splide__pagination__page.is-active {
+        @apply text-red-400 fill-current;
+    }
+
+    .dosomegood .splide__arrow svg:hover {
+        fill: #FCA5A5;
+    }
+
+    .dosomegood .splide__pagination__page.is-active {
+        @apply bg-red-400;
+    }
+
+    .dosomegood .splide__pagination__page:hover {
+        @apply bg-red-300;
+    }
+    
+    .take10 blockquote {
+        @apply border-l-4 border-yellow-500;
+    }
+
+    .take10 blockquote::before {
+        @apply text-yellow-500;
+    }
+
+    .take10 .splide__arrow svg, .splide__pagination__page.is-active {
+        @apply text-yellow-500 fill-current;
+    }
+
+    .take10 .splide__arrow svg:hover {
+        fill: #FBBF25;
+    }
+
+    .take10 .splide__pagination__page.is-active {
+        @apply bg-yellow-500;
+    }
+
+    .take10 .splide__pagination__page:hover {
+        @apply bg-yellow-400;
+    }
+
+    .genlink blockquote {
+        @apply border-l-4 border-blue-400;
+    }
+
+    .genlink blockquote::before {
+        @apply text-blue-400;
+    }
+
+    .genlink .splide__arrow svg, .splide__pagination__page.is-active {
+        @apply text-blue-400 fill-current;
+    }
+
+    .genlink .splide__arrow svg:hover {
+        fill: #93C5FD;
+    }
+
+    .genlink .splide__pagination__page.is-active {
+        @apply bg-blue-400;
+    }
+
+    .genlink .splide__pagination__page:hover {
+        @apply bg-blue-300;
+    }
+
+
+    /* HOME */
+    .home-banner {
+        @apply flex flex-col flex-1 p-5 bg-center bg-cover bg-opacity-20;
+    }
+
+    .call-to-action {
+        background: linear-gradient(135deg, #F87272 33%, #FBBF24 33%, #FBBF24 66%, #61A5FA 66%);
+    }
+
+
+    /*** NEWS ***/
+    .post-body p {
+      @apply py-2;
+    }
+
+    .post-body ul {
+      @apply pb-4;
+    }
+
+    .post-body img {
+        @apply m-5 mx-auto rounded-lg max-w-4xl;
+    }
+
+
+    /*** TIMELINE ***/
+    .milestones {
+        @apply font-bold text-gray-50 p-4 rounded-lg uppercase inline-block w-40;
+    }
+
+    .timeline-item {
+        @apply relative pl-10 pb-8 list-none;
+    }
+
+   .timeline-info {
+        @apply font-bold uppercase;
+    }
+
+    .timeline-marker {
+        @apply absolute top-0 left-0 bottom-0;
+    }
+
+    .timeline-marker:before {
+        @apply absolute block bg-red-400 border-4 border-transparent rounded-full top-1 left-0;
+        content: "";
+        width: 15px;
+        height: 15px;
+        transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+   .timeline-marker:after {
+       @apply absolute bg-gray-300 top-6 bottom-0;
+        content: "";
+        width: 3px;
+        left: 6px;
+    }
+
+    .timeline-item:last-child .timeline-marker:after {
+        content: none;
+    }
+
+    .timeline-item:not(:last-child):hover .timeline-marker:before {
+        @apply bg-white border-4 border-red-400;
+    }
+
+   .timeline-item:last-child .timeline-marker:before {
+        @apply absolute h-auto border-none top-0;
+        border-top: 3px solid #ccd5db;
+    }
+
+    .timeline-centered, .timeline-centered .timeline-item, .timeline-centered .timeline-info, .timeline-centered .timeline-marker, .timeline-centered .timeline-content {
+        @apply lg:p-0;
+    }
+
+    .timeline-centered .timeline-item {
+        @apply lg:pb-8 lg:overflow-hidden;
+    }
+
+    .timeline-centered .timeline-marker {
+        @apply lg:left-1/2 lg:-ml-2;
+    }
+
+    .timeline-centered .timeline-info, .timeline-centered .timeline-content {
+        @apply lg:w-1/2;
+    }
+
+    .timeline-centered > .timeline-item:nth-child(odd) .timeline-info, .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+        @apply lg:float-left lg:text-right lg:pr-8;
+    }
+
+    .timeline-centered > .timeline-item:nth-child(odd) .timeline-content, .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+        @apply lg:float-right lg:text-left lg:pl-8;
+    }
+
+    /* SCHOOLS */
+    .school-overlay {
+        @apply absolute opacity-0 bottom-0 right-0 top-full h-0 w-full overflow-hidden bg-red-400;
+        transition: .2s ease;
+    }
+
+    .school-overlay div {
+        @apply text-white absolute top-1/2 left-1/2 w-full p-8; 
+        transform: translate(-50%, -50%);
+      }
+
+      .school-overlay div img {
+          @apply w-1/4 h-1/4 lg:w-1/3 lg:h-1/3;
+      }
+
+      .school:hover .school-overlay {
+        @apply w-full left-0 opacity-100 top-0 h-full;
+      }
+
+      .school {
+        @apply relative;
+      }
+
+      ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background: white;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        border-radius: 100vh;
+        background: #edf2f7;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e0;
+        border-radius: 100vh;
+        border: 3px solid #edf2f7;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a0aec0;
+      }
+
+    /* CloudCannon */
+    .align-left { text-align: left; }
+    .align-center { text-align: center; }
+    .align-right { text-align: right; }
+    .align-justify { text-align: justify; }
+
+}
+
+/* https://google-webfonts-helper.herokuapp.com/fonts */
+/* poppins-100 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-100.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-100.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-100.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-100italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-100italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-100italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-100italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-100italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-100italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-100italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-200 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-200.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-200.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-200italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-200italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-200italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-200italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-200italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-200italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-200italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-300 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/poppins-v15-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/poppins-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/poppins-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/poppins-v15-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/poppins-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/poppins-v15-latin-300.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-300italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/poppins-v15-latin-300italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/poppins-v15-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/poppins-v15-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/poppins-v15-latin-300italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/poppins-v15-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/poppins-v15-latin-300italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-regular.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-500italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-500italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-500italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-500italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-500.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-600.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-600italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-600italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-600italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-600italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-600italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-600italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-700italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-700italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-700italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-700italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-700.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-800 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-800.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-800.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-800italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-800italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-800italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-800italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-800italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-800italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-800italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-900italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-900italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-900italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-900italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-900italic.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-900italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-900italic.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+/* poppins-900 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../_public/fonts/poppins-v15-latin-900.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../_public/fonts/poppins-v15-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../_public/fonts/poppins-v15-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('../_public/fonts/poppins-v15-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../_public/fonts/poppins-v15-latin-900.svg#Poppins') format('svg'); /* Legacy iOS */
+}

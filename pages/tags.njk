@@ -1,0 +1,28 @@
+---
+bannerImage: /_public/img/banner/default.jpg
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - posts
+    - trustMembers
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: "{{ tag }} News"
+permalink: /news/category/{{ tag | slug }}/
+_unlisted: true
+---
+<section class="section">
+    <div class="text-center">
+        <p>You're currently looking at all posts categorised under <strong>{{ tag }}</strong>. <a href="/news/">View all posts here</a>.</p>
+    </div>
+
+    <section class="section grid lg:grid-cols-3 gap-10">
+        {% for post in collections[tag] | reverse %}
+            {%- include 'components/grid-post-summary.njk' -%}
+        {% endfor %}
+    </section>
+</section>

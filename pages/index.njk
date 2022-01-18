@@ -1,0 +1,172 @@
+---
+title: Home
+pagination:
+  data: collections.posts
+  size: 3
+  reverse: true
+permalink: "/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
+do-some-good-image: /_public/img/banner/home-dosomegood.jpg
+take-10-image: /_public/img/banner/home-take10.jpg
+take-10-arvo's-image: /_public/img/banner/home-take10-arvos.jpg
+take-10-queenstown-image: /_public/img/banner/home-take10.jpg
+gen-link-image: /_public/img/banner/home-genlink.jpg
+our-numbers-image: /_public/img/banner/home-our-numbers.jpg
+darken: 0.55
+---
+<style>
+    :root {
+    --darken: {{ darken }};
+    }
+
+    .home-dosomegood {   
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'do-some-good-image' | getVar %}) center/cover;
+    }
+
+    .home-take10 {
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'take-10-image' | getVar %}) center/cover;
+    }
+
+    .home-take10arvos {
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'take-10-arvo\'s-image' | getVar %}) center/cover;
+    }
+
+    .home-take10queenstown {
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'take-10-queenstown-image' | getVar %}) center/cover;
+    }
+
+    .home-genlink {
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'gen-link-image' | getVar %}) center/cover;
+    }
+
+    .home-numbers {
+        background: linear-gradient(rgba(0, 0, 0, var(--darken)), rgba(0, 0, 0, var(--darken))), url({% imageUrl 'our-numbers-image' | getVar %}) center/cover;
+    }
+
+</style>
+
+<section class="section pt-0">
+    <div class="section-flex lg:space-x-7">
+        <div class="home-banner home-dosomegood box-shadow ">
+            <a href="/dosomegood/" class="self-center">{% image "/_public/img/logo/dosomegood.png", "Do Some Good logo", "100vw" %}</a> 
+            <div class="mt-3 editable">
+                <p class="text-white leading-5">Influencing positive change for tamariki living in hardship. We help businesses find opportunities to help the schools and kiwi kids who need it most.</p>
+            </div>
+            <div class="mt-auto">
+                {% readMoreButton 'Learn More', '/dosomegood/', 'bg-red-400', 'bg-red-300', 'w-full' %}
+            </div>
+        </div>
+        <div class="home-banner home-take10 box-shadow">
+            <a href="/take10/" class="self-center">{% image "/_public/img/logo/take10.png", "Take 10 logo", "100vw" %}</a>
+            <div class="mt-3 editable">
+                <p class="text-white leading-5">Providing a late-night “safe zone” on Courtenay Place where we offer water, phone charging, medical help, and refuge to reduce alcohol and drug related harm.</p>
+            </div>
+            <div class="mt-auto">
+                {% button 'Learn More', '/take10/', 'bg-yellow-500', 'bg-yellow-400', 'w-full' %}
+            </div>
+        </div>
+        <div class="home-banner home-take10arvos box-shadow">
+            <a href="/take10-arvos/" class="self-center">{% image "/_public/img/logo/take10-arvos.png", "Take 10 Arvo's logo", "100vw" %}</a>
+            <div class="mt-3 editable">
+                <p class="text-white leading-5">Assisting rangatahi in our communities by providing a safe place to hang out, catch up with friends, do homework, play some games or just a quiet space to chill out before heading home.</p>
+            </div>
+            <div class="mt-auto">
+                {% button 'Learn More', '/take10-arvos/', 'bg-yellow-500', 'bg-yellow-400', 'w-full' %}
+            </div>
+        </div>
+        <div class="home-banner home-take10queenstown box-shadow">
+            <a href="/take10-queenstown/" class="self-center">{% image "/_public/img/logo/take10-queenstown.png", "Take 10 Queenstown logo", "100vw" %}</a>
+            <div class="mt-3 editable">
+                <p class="text-white leading-5 text-center">Coming Soon!</p>
+            </div>
+            <div class="mt-auto">
+                {% button 'Learn More', '/take10-queenstown/', 'bg-yellow-500', 'bg-yellow-400', 'w-full' %}
+            </div>
+        </div>
+        <div class="home-banner home-genlink box-shadow">
+            <a href="/gen-link/" class="self-center">{% image "/_public/img/logo/gen-link.png", "Gen Link logo", "100vw" %}</a>
+            <div class="mt-3 editable">
+                <p class="text-white leading-5">Connecting young people with older folk in our local communities.</p>
+            </div>
+            <div class="mt-auto">
+                {% button 'Learn More', '/gen-link/', 'bg-blue-400', 'bg-blue-300', 'w-full' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-10">
+    <h2><a href="#howyoucanhelp" id="howyoucanhelp">How you can help</a></h2>
+    <div class="section-flex text-shadow call-to-action">
+        <div class="flex flex-col flex-1 px-5 py-5 text-center text-xl hover:no-underline bg-red-400 lg:bg-transparent">
+            <div class="flex flex-col text-center">
+                <a href="/donate/" class="self-center">{% image "/_public/img/donate.png", "donate icon", "100vw" %}</a>
+                <div class="text-white editable">
+                    <h3><a href="/donate/" class="hover:no-underline">Make a Donation</a></h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 px-5 py-5 text-center text-xl hover:no-underline bg-yellow-500 lg:bg-transparent">
+            <div class="flex flex-col text-center">
+                <a href="/volunteer/" class="self-center">{% image "/_public/img/volunteer.png", "volunteer icon", "100vw" %}</a>
+                <div class="text-white editable">
+                    <h3 class="font-semibold text-white text-2xl"><a href="/volunteer/" class="hover:no-underline">Become a Volunteer</a></h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 px-5 py-5 text-center text-xl hover:no-underline bg-blue-400 lg:bg-transparent">
+            <div class="flex flex-col text-center">
+                <a href="/sponsor-a-school/" class="self-center">{% image "/_public/img/sponsor.png", "sponsor icon", "100vw" %}</a>
+                <div class="editable">
+                    <h3 class="font-semibold text-white text-2xl"><a href="/sponsor-a-school/" class="hover:no-underline">Sponsor a School</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#helping" id="helping">Helping rangatahi and tamariki in Wellington</a></h2>
+    </div>
+    <div class="editable">
+        <p class="text-center">We are a Wellington-based charity focused on supporting tamariki in need by providing food in schools, young people in the city on Friday and Saturday nights, and older people who may be feeling alone or isolated.</p>
+        <p class="text-center">We have five programmes – <a href="/dosomegood/">Do Some Good</a>, <a href="/take10">Take 10</a>, <a href="/take10-arvos/">Take 10 Arvo's</a>, <a href="/take10-queenstown/">Take 10 Queenstown</a>, and <a href="/gen-link/">Generation Link</a>.</p>
+    </div>
+    {% button 'Who We Are', '/who-we-are/', 'bg-gray-600', 'bg-gray-500' %}
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#news" id="news">Latest News</a></h2>
+    </div>
+    <section class="grid lg:grid-cols-3 gap-10">
+        {% for post in pagination.items %}
+            {% include 'components/grid-post-summary.njk' %}
+        {% endfor %}
+    </section>
+</section>
+
+<section class="mt-10 home-numbers bg-center bg-cover">
+    <div class="section">
+        <div class="editable">
+            <h2 class="text-white"><a href="#numbers" id="numbers">Our numbers</a></h2>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 text-center text-white">
+            <div class="editable">
+                <h3 class="counter">13</h3>schools sponsored
+            </div>
+            <div class="editable">
+                <h3 class="counter">298</h3>Take 10 visitors
+            </div>
+            <div class="editable">
+                <h3 class="counter">97720</h3>litres of water given out
+            </div>
+            <div class="editable">
+                <h3 class="counter">87687</h3>meals supplied to school
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/our-numbers.js"></script>

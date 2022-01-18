@@ -1,0 +1,117 @@
+---
+title: Take 10
+bannerImage: /_public/img/banner/take10.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-2 gap-10">
+        <div class="editable">
+            {% image "/_public/img/logo/take10-lg.png", "Take 10 logo", "100vw", "mx-auto" %}
+        </div>
+        <div class="grid gap-5">
+            <div class="editable">
+                <h3>Take 10 is a late-night “safe zone” for vulnerable youth in Wellington’s entertainment district.</h3>
+            </div>
+            <div class="editable">
+                <p>For those who may need a break from drinking, need help, or just want a break, we provide a safe place to “take 10”. They can hang out, have some water, charge their phone to stay in touch with friends and family, get medical help, refuge, and advice from our fully trained team leaders and volunteers.</p>
+                <p>Our base is on Courtenay Place in the form of a mobile unit which can be used not only in central Wellington but also in the wider Wellington Region.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section editable">
+    <iframe class="rounded-lg" width="100%" height="500" src="https://www.youtube-nocookie.com/embed/yG1Nd87BjYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#howitworks" id="howitworks">How it works</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6">
+        <div class="editable">
+            <p>We aim to:</p>
+            <ul>
+                <li>reduce harm from alcohol and drugs</li>
+                <li>reduce demands on emergency services and local hosts</li>
+            </ul>
+        </div>
+        <div class="editable">
+            <p>We keep our “safe zone” welcoming and non-judgmental by:</p>
+            <ul>
+                <li>always using positive language</li>
+                <li>greeting visitors with a smile, water, and lollies</li>
+                <li>providing a private space for those who need more attention</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-6 editable">
+        <p>What makes Take 10 different?</p>
+        <ul>
+            <li><strong>Preventative</strong> – we catch people before they become victims by stopping them from becoming isolated, and helping to reconnect people.</li>
+            <li><strong>Approach-able</strong> – people are often more willing to come to us than the police or emergency services</li>
+            <li><strong>Safe</strong> – we give people a place to go where they can sober up, rather than putting themselves at risk</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="editable">
+        <h2><a href="#wanttohelp" id="wanttohelp">Want to help?</a></h2>
+    </div>
+    <div class="editable">
+        <p>We’re looking for volunteers to come out on Friday and Saturday nights, hand out water, talk to people, and make the Take 10 area an inviting place to be. Interested? Click below, fill in your details and we’ll get back to you!</p>
+        <p>We are also always on the lookout for medics and registered youth workers to join us and help make a difference. If you’re qualified and interested, please <a href="/contact">contact us</a>.</p>
+    </div>
+    {% button 'Volunteer', '/volunteer/', 'bg-yellow-500', 'bg-yellow-400' %}
+</section>
+
+{% if collections.take10Testimonials %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#testimonials" id="testimonials">Testimonials</a></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 take10">
+        {% for testimonial in collections.take10Testimonials %}
+            {% include 'components/testimonial.njk' %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if collections.take10Gallery %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#gallery" id="gallery">Gallery</a></h2>
+    </div>
+    <div class="splide photo-gallery take10">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.take10Gallery %}
+                    {% include 'components/gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if collections.take10Sponsors %}
+<section class="section">
+    <div class="editable">
+        <h2><a href="#sponsors" id="sponsors">Sponsors</a></h2>
+    </div>
+    <div class="splide take10">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for gallery in collections.take10Sponsors %}
+                    {% include 'components/logo-gallery.njk' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<script src="/js/splide.min.js"></script>
+<script src="/js/splide-init.js"></script>

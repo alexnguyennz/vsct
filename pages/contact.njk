@@ -1,0 +1,50 @@
+---
+title: Contact
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section space-y-5">
+    <iframe class="rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11996.304145328812!2d174.76848223014306!3d-41.26368031577417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38ae3d35bb7827%3A0x90fc01e70332ebb1!2s77%20Hutt%20Rd%2C%20Pipitea%2C%20Wellington%206035!5e0!3m2!1sen!2snz!4v1572223675033!5m2!1sen!2snz" width="100%" height="400"></iframe>
+    <div class="section-flex text-center space-y-5 lg:space-y-0">
+        <div class="flex flex-col flex-1">
+            <h2 class="text-4xl"><a href="https://goo.gl/maps/gHM1cmGfgJXo3W9s9"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="fill-current dark:text-gray-100 mx-auto" viewBox="0 0 512 512"><circle cx="256" cy="192" r="32"/><path d="M256 32c-88.22 0-160 68.65-160 153 0 40.17 18.31 93.59 54.42 158.78 29 52.34 62.55 99.67 80 123.22a31.75 31.75 0 0 0 51.22 0c17.42-23.55 51-70.88 80-123.22C397.69 278.61 416 225.19 416 185c0-84.35-71.78-153-160-153zm0 224a64 64 0 1 1 64-64 64.07 64.07 0 0 1-64 64z" /></svg></a></h2>
+            <div class="font-medium editable">
+                <a href="https://goo.gl/maps/gHM1cmGfgJXo3W9s9">{{ site.address }}</a>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1">
+            <h2 class="text-4xl"><a href="mailto:{{ site.email }}?Subject=Website Enquiry"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="fill-current dark:text-gray-100 mx-auto" viewBox="0 0 512 512"><path d="M424 80H88a56.06 56.06 0 0 0-56 56v240a56.06 56.06 0 0 0 56 56h336a56.06 56.06 0 0 0 56-56V136a56.06 56.06 0 0 0-56-56zm-14.18 92.63-144 112a16 16 0 0 1-19.64 0l-144-112a16 16 0 1 1 19.64-25.26L256 251.73l134.18-104.36a16 16 0 0 1 19.64 25.26z" /></svg></h2>
+            <div class="font-medium editable">
+                <a href="mailto:{{ site.email }}?Subject=Website Enquiry">{{ site.email }}</a>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1">
+            <h2 class="text-4xl"><a href="tel:+64{{ site.phone }}"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="fill-current dark:text-gray-100 mx-auto" viewBox="0 0 512 512"><path d="M336 0H176a64 64 0 0 0-64 64v384a64 64 0 0 0 64 64h160a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64zm32 448a32 32 0 0 1-32 32H176a32 32 0 0 1-32-32V64a32 32 0 0 1 32-32h11.35a7.94 7.94 0 0 1 7.3 4.75A32 32 0 0 0 224 56h64a32 32 0 0 0 29.35-19.25 7.94 7.94 0 0 1 7.3-4.75H336a32 32 0 0 1 32 32z"/><path d="M336 48a11.88 11.88 0 0 0-9.53 4.69A48 48 0 0 1 288 72h-64a48 48 0 0 1-38.47-19.31A11.88 11.88 0 0 0 176 48a16 16 0 0 0-16 16v384a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16z" /><path d="M336 0H176a64 64 0 0 0-64 64v384a64 64 0 0 0 64 64h160a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64zm32 448a32 32 0 0 1-32 32H176a32 32 0 0 1-32-32V64a32 32 0 0 1 32-32h11.35a7.94 7.94 0 0 1 7.3 4.75A32 32 0 0 0 224 56h64a32 32 0 0 0 29.35-19.25 7.94 7.94 0 0 1 7.3-4.75H336a32 32 0 0 1 32 32z" /></svg></a></h2>
+            <div class="font-medium editable">
+                <a href="tel:+64{{ site.phone }}">{{ site.displayPhone }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 dark:bg-gray-900">
+    <form class="section lg:px-40" name="contact" method="post" action="/success/">
+        <div class="section-flex lg:space-x-5">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/name.njk' %}
+            </div>
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/email.njk' %}
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/message.njk' %}
+            </div>
+        </div>
+
+        {% include 'components/form/cloudcannon.njk' %}
+
+        {% include 'components/form/submit.njk' %}
+    </form>
+</section>

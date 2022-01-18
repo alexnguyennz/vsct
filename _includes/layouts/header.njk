@@ -1,0 +1,87 @@
+<header class="hidden lg:flex section justify-between items-center">
+    <a href="/">{% image "/_public/img/vsct-logo.png", "Vulnerable Support Charitable Trust logo", "100vw" %}</a>
+    
+        <nav class="text-lg font-bold whitespace-nowrap">
+            <a href="/" class="{% if page.url == '/' %} active-link {% endif %}">Home</a>
+            <div class="submenu">
+                <a class="{% if page.url == '/who-we-are/' or page.url == '/trust/' or '/news/' in page.url or page.url == '/media/' %} active-link {% endif %}">About Us</a>
+                <div class="dropdown">
+                    <a href="/who-we-are/">Who We Are</a>
+                    <a href="/trust/">The Trust</a>
+                    <a href="/news/">News</a>
+                    <a href="/media/">Media</a>
+                </div>
+            </div>
+            <div class="submenu">
+                <a class="{% if page.url == '/dosomegood/' or page.url == '/take10/' or page.url == '/take10-arvos/' or page.url == '/take10-queenstown/' or page.url == '/gen-link/' %} active-link {% endif %}">Our Work</a>
+                <div class="dropdown">
+                    <a href="/dosomegood/">Do Some Good</a>
+                    <a href="/take10/">Take 10</a>
+                    <a href="/take10-arvos/">Take 10 Arvo's</a>
+                    <a href="/take10-queenstown/" class="whitespace-normal">Take 10 Queenstown</a>
+                    <a href="/gen-link/">Gen Link</a>
+                </div>
+            </div>
+            <div class="submenu">
+                <a class="{% if page.url == '/donate/' or page.url == '/volunteer/' or page.url == '/sponsor-a-school/' %} active-link {% endif %}">Get Involved</a>
+                <div class="dropdown">
+                    <a href="/donate/">Donate</a>
+                    <a href="/volunteer/">Volunteer</a>
+                    <a href="/sponsor-a-school/" class="whitespace-normal">Sponsor a School</a>
+                </div>
+            </div>
+            <a href="/contact/" class="{% if page.url == '/contact/' %} active-link {% endif %}">Contact</a>
+            <a class="text-gray-50 pr-0" href="/donate/"><button class="button bg-red-400 hover:bg-red-300 font-semibold">Donate</button></a>
+        </nav>
+</header>
+
+<nav class="lg:hidden">
+    <div class="px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <a href="/" class="flex items-center py-4">
+                        {% image "/_public/img/vsct-logo.png", "Vulnerable Support Charitable Trust logo", "100vw" %}
+                    </a>
+                </div>
+            </div>
+            <div class="flex">
+                <button class="mobile-menu-button">
+                <svg class="w-6 h-6" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mobile-menu hidden mb-8">
+        <ul>
+            <li><a href="/" class="{% if page.url == '/' %}  active-link {% endif %}">Home</a></li>
+            <li class="mobile-submenu {% if page.url == '/who-we-are/' or page.url == '/trust/' or '/news/' in page.url or page.url == '/media/' %} active-link {% endif %}"><a>About Us ⬎</a></li>
+                <div class="hidden">
+                    <li><a href="/who-we-are/">Who We Are</a></li>
+                    <li><a href="/trust/">The Trust</a></li>
+                    <li><a href="/news/">News</a></li>
+                    <li><a href="/media/">Media</a></li>
+                </div>
+            <li class="mobile-submenu {% if page.url == '/dosomegood/' or page.url == '/take10/' or page.url == '/take10-arvos/' or page.url == '/take10-queenstown/' or page.url == '/gen-link/' %} active-link {% endif %}"><a>Our Work ⬎</a></li>
+                <div class="hidden">
+                    <li><a href="/dosomegood/">Do Some Good</a></li>
+                    <li><a href="/take10/">Take 10</a></li>
+                    <li><a href="/take10-arvos/">Take 10 Arvo's</a></li>
+                    <li><a href="/take10-queenstown/">Take 10 Queenstown</a></li>
+                    <li><a href="/gen-link/">Gen Link</a></li>
+                </div>
+            <li class="mobile-submenu {% if page.url == '/donate/' or page.url == '/volunteer/' or page.url == '/sponsor-a-school/' %} active-link {% endif %}"><a>Get Involved ⬎</a></li>
+                <div class="hidden">
+                    <li><a href="/donate/">Donate</a></li>
+                    <li><a href="/volunteer/">Volunteer</a></li>
+                    <li><a href="/sponsor-a-school/">Sponsor a School</a></li>
+                </div>
+            <li><a href="/contact/" class="{% if page.url == '/contact/' %} active-link {% endif %}">Contact</a></li>
+            <li><a href="/donate/" class="donate-button">Donate</a></li>
+        </ul>
+    </div>
+
+</nav>

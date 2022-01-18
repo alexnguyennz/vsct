@@ -1,0 +1,47 @@
+---
+title: Sponsor a School
+bannerImage: /_public/img/banner/default.jpg
+---
+
+<section class="section">
+    <div class="grid lg:grid-cols-2 gap-10">
+        <div class="editable">
+            {% image "/_public/img/donate.jpg", "donate image", "100vw", "rounded-lg" %}
+        </div>
+        <div class="editable">
+            <p>The 2017 Child Poverty Monitor showed over 290,000 kiwi kids are living in hardship and missing out on opportunities. We want to help build connections between businesses and low decile schools and posh kindergartens to generate positive change in how we look after our people.</p>
+            <p>Each business will have something different to offer, or a different way in which they can help.</p>
+            <p class="mb-0">Want to sponsor a school or kindergarten? <a href="/_public/dosomegood.pdf">Read through our brochure</a> and fill in the form below if you’re interested!</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 dark:bg-gray-900">
+    <form class="section lg:px-40" name="sponsor" method="post" action="/success/">
+        <div class="section-flex w-full lg:space-x-5">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/name.njk' %}
+            </div>
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/email.njk' %}
+            </div>
+        </div>
+        <div class="section-flex w-full lg:space-x-5">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/phone.njk' %}
+            </div>
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/website.njk' %}
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex flex-col w-full mb-5">
+                {% include 'components/form/message.njk' %}
+            </div>
+        </div>
+
+        {% include 'components/form/cloudcannon.njk' %}
+
+        {% include 'components/form/submit.njk' %}
+    </form>
+</section>
