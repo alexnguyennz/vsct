@@ -13,5 +13,3 @@ We had a wonderful group of volunteers from Randstad come along to help with som
 The team cleaned everything from cupboards and floors to tables and took off the old materials from the walls. They were given free rein to redesign the room as they liked. At the beginning it looked like a large task but once they had an idea of what needed to be achieved, the Randstad team and tamariki made a big difference fast!
 
 We had a lovely BBQ lunch with the teachers and students, and some players from the Pulse Netball Team along to join in the fun. We finished the day with the school assembly, which was such a treat, what a great bunch of singers this group of tamariki are!
-
-<img src="https://vsctrust.org.nz/wp-content/uploads/Randstad-Volunteer-Day-4-768x576.jpg" alt="Pomare School" />

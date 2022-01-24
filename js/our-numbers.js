@@ -29,6 +29,10 @@ const animateCountUp = el => {
 		// If we’ve reached our last frame, stop the animation
 		if ( frame === totalFrames ) {
 			clearInterval( counter );
+      
+      setTimeout(() => {
+        processNumbers();
+      }, 50);
 		}
 	}, frameDuration );
 };
@@ -48,6 +52,7 @@ const counterCallback = function (entries) {
       if (entry.isIntersecting) {
         runAnimations();
         hasCounterRun = true;
+        
       }
     });
   }
@@ -60,3 +65,21 @@ const counterCallback = function (entries) {
    
     counterObserver.observe(target);
   });
+
+
+// process numbers by adding commas for readability
+let processed = false;
+
+function processNumbers() {
+
+  if (!processed) {
+
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach((counter => {
+      counter.innerHTML = Number(counter.innerHTML).toLocaleString(undefined, {minimumFractionDigits: 0});
+    }));
+
+    processed = true;
+  }
+}

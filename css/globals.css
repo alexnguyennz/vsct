@@ -171,8 +171,8 @@
         @apply scale-100;
     }
 
-    .social-media span a:first-child img {
-        @apply mb-3;
+    .social-media span a:nth-child(2) img {
+        @apply my-3;
     }
 
 
